@@ -1,4 +1,4 @@
-/* Base */
+/* cartase */
 body {
   line-height: 1.7;
   color: #999999;
@@ -1755,13 +1755,13 @@ h5,
 }
 
 .auctions-entry .item {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   position: relative;
 }
 .auctions-entry .item img {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .auctions-entry .item h3 {
   font-size: 22px;
@@ -1976,4 +1976,9 @@ input:active {
 }
 .form-control {
   border-radius: 2%;
+}
+.fo {
+  font-weight: bold;
+  color: blue;
+  font-size: 15px;
 }

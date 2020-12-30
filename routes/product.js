@@ -25,10 +25,14 @@ router.get('/Aboutus', async function(req, res, next) {  // Admin view
 
 
 router.get('/OurProducts',sessioncheck, async function(req, res, next) {
-  let products=await Product.find();
+  let page=req.query.page?req.query.page:1;
+  let perPage=9;
+ let skipRecords=perPage*(page-1);
+ let Totals=await Product.countDocuments();
+  let products=await Product.find().skip(skipRecords).limit(perPage);
   console.log(req.session.reg);                             //User View
   
-  res.render('Productlist',{title:'Our Products',products});
+  res.render('Productlist',{title:'Our Products',products,Totals});
 });
 
 

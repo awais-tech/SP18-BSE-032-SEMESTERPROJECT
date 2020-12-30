@@ -1,35 +1,36 @@
 extends layout
 
 block content
- .intro-section(style="background-image: url('../images/hero_1.jpg');")
+ .site-section
     .container
-      .row.align-items-center.justify-content-center
-        .col-md-7.mx-auto.text-center(data-aos='fade-up')
-          h1 Buy our Products
- .container
-    .row.mt-4
-      .col-8
-        h1
-          p.text-danger #{title}
-      .col-4
-    table.table.table-dark.font-weight-bold.mb-2#yes
-        thead
-          tr
-            th Product Name
-            th Product Price
-            th Product Quantity
-            th Actions
-        tbody
-          each Product in products
-            tr
-              td= Product.ProductName
-              td= Product.ProductPrice
-              td= Product.ProductQuantity
-              td
-                if user  
-                  a.btn.btn-success(href="/product/OurProducts/cart/"+Product._id) Add To Cart
-            script.
-              $(document).ready(function() {
-                  $('#yes').DataTable();
-              })      
-            
+        .row
+          .col-md-12
+            .row.auctions-entry
+                each Product in products
+                    
+                        .col-6.col-md-4.col-lg-4.pb-5
+                            .item
+                                strong.price #{Product.ProductPrice} Rs
+
+                                img.img-fluid(src='../images/Fake.jpg' alt='Image')
+                            
+                            .d-flex.mb-2.font-weight-bold.fo
+                                  
+                                span.font-weight-bold Name: #{Product.ProductName}   
+                                span.ml-auto Quantity #{Product.ProductQuantity}
+                            h3
+                                if user  
+                                     a.btn.btn-success(href="/product/OurProducts/cart/"+Product._id) Add To Cart
+                                
+    -var s=Math.ceil(Totals/9);
+                               
+    .pb-5
+        .container.text-center
+            .row
+                .col-lg
+                    .custom-pagination
+                       -for (var n = 1; n <=s; ++n)
+                        a.active(href="/product/OurProducts?page="+n)=n
+                           
+                       
+                       

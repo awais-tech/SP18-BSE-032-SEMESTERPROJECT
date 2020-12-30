@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
 });
 
 mongoose
-  .connect("mongodb://localhost/cookiesHandling", {
+  .connect("mongodb+srv://awais:awais@cluster0.tpfm3.mongodb.net/Ecommerce?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify:true,

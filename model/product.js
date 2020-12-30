@@ -11,7 +11,7 @@ ProductName:{
             
 }
 });
-const Products=mongoose.model("Courses",productscheme);
+const Products=mongoose.model("Products",productscheme);
 
 function validateProduct(data){
     const scheme =Joi.object({
