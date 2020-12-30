@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+ .container
+    .row.mt-4
+      .col-8
+        h1
+          p.text-danger #{title}
+      .col-4
+    table.table.table-dark#usersr
+      thead
+        tr
+          
+          th User Email
+          th User Username
+          th User Password
+          th Actions
+      tbody
+        each RegisterUser in RegisteredUser
+          if RegisterUser.role=="user"
+            tr
+              td= RegisterUser.Email
+              td= RegisterUser.Username
+              td= RegisterUser.Password
+              td
+                if admin
+                  a.btn.btn-danger.mr-2.align-center(href="/users/RegisterUser/delete/"+RegisterUser._id) Delete
+                  a.btn.btn-warning.mr-2.align-center(href="/users/RegisterUser/Edit/"+RegisterUser._id) Edit
+            script.
+              $(document).ready(function() {
+                $('#usersr').DataTable();
+              })
+      
+      

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    .container-fluid
+        .col-8.m-auto.py-2
+            h1 Login Page
+            h6.text-danger.bg.info=err
+            if user
+            form(action="/users/Login", method="post")
+            
+                .form-group
+                    <label for="exampleFormControlInput1">Username</label>
+                    <input type="Username" class="form-control" id="exampleFormControlInput1" name="Username">
+                
+                .form-group
+                    <label for="exampleFormControlInput1">Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput1" name="Password">
+                
+                input(type="submit", value="Log In" class="btn btn-success btn-lg")
+                a.btn.btn-info.ml-4.btn-lg(href="/users/register") Register
+                span.text-primary (Dont have account Register Now)
+                </div>

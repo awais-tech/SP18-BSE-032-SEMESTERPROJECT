@@ -1,0 +1,24 @@
+extends ./layout
+
+block content
+    .container
+        h1 My Shopping cart
+        - var total=0;
+        table.table.table-dark.font-weight-bold.table-bordered.table-striped
+            tr
+                th Name
+                th Price
+                th Action
+            
+            each item in cart
+                tr
+                    td=item.ProductName
+                    td=item.ProductPrice
+                    td
+                        a.btn.btn-danger(href="/product/OurProducts/cart/remove/"+item._id) Remove
+                        -total=total+Number(item.ProductPrice)
+            tr
+                td Total
+                td=total
+        a.btn.btn-info(href="/product/OurProducts/PlaceOrder") PLaceOrder
+        

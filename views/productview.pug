@@ -1,0 +1,35 @@
+extends layout
+
+block content 
+ .container
+    .row.mt-4
+      .col-8
+        h1
+          p.text-danger #{title}
+      .col-4
+        if admin 
+          a(href="/product/add" class='btn btn-info float-right') Create New
+    table.table.table-dark#example
+      thead
+        tr
+          
+          th Product Name
+          th Product Price
+          th Product Quantity
+          th Actions
+      tbody
+        each Product in products
+          tr
+            td= Product.ProductName
+            td= Product.ProductPrice
+            td= Product.ProductQuantity
+            td
+              if admin
+                a.btn.btn-danger.mr-2.align-center(href="product/delete/"+Product._id) Delete
+                a.btn.btn-warning.mr-2.align-center(href="product/Edit/"+Product._id) Edit
+          script.
+            $(document).ready(function() {
+                $('#example').DataTable();
+            })
+      
+      

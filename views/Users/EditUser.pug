@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    h1 Edit User
+    form(action="/users/RegisterUser/Edit/"+RegisterUser._id , method="post")
+        .form-group
+            label(for="name") User Email
+            input#name(type="text", class="form-control",  name="Email" value=RegisterUser.Email required)
+        .form-group
+            label(for="name") User Username
+            input#name(type="text", class="form-control", name="Username" value=RegisterUser.Username required)
+        .form-group
+            label(for="price") User Password
+            input#price(type="text", class="form-control", name="Password", value=RegisterUser.Password required)
+        
+        input(type="submit", class="btn btn-info")
+    

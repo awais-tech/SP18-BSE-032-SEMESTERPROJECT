@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+   .container-fluid
+        .col-8.m-auto.py-2
+            h1 SignUp Page
+            h6.text-danger=a
+            form(action="/users/register", method="post")
+                .form-group
+                    <label for="exampleFormControlInput1">Email</label>
+                    input(type="email" class="form-control" id="exampleFormControlInput1" value=email  name="Email")   
+                .form-group
+                    <label for="exampleFormControlInput1">Username</label>
+                    input(type="text" class="form-control" id="exampleFormControlInput1" value=users  name="Username")  
+                .form-group
+                    <label for="exampleFormControlInput1">Password</label>
+                    input(type="password" class="form-control" id="exampleFormControlInput1" value=pass   name="Password" pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"  title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character")
+                    h6.text-danger=c
+                input(type="submit", value="Sign In" class="btn btn-success  btn-lg")
+                </div>

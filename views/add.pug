@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    container-fluid
+        .col-8.m-auto.py-2
+            h1
+                p.text-danger Edurekas Course List
+            h1.danger=a
+            form(action="/product/add", method="post")
+                .form-group
+                    <label for="exampleFormControlInput1">Product Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"  name="ProductName">
+                
+                .form-group
+                    <label for="exampleFormControlInput1">Product Price</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" name="ProductPrice">
+            
+                .form-group
+                    <label for="exampleFormControlInput1">Product Quantity</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1"  name="ProductQuantity">
+                
+                
+                input(type="submit", value="Create New" class="btn btn-success")
+                </div>
+            
