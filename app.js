@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
 });
 
 mongoose
-  .connect("mongodb+srv://awais:awais@cluster0.tpfm3.mongodb.net/Ecommerce?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://awais:awais@cluster0..v4q8i.mongodb.net/Ecommerce?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify:true,
